@@ -3,7 +3,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.generateEnvType = void 0;
 const dotenv_1 = __importDefault(require("dotenv"));
 const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
@@ -44,7 +43,7 @@ function determineType(value) {
         return "string";
     }
 }
-const parseEnv = () => {
+const envTypeDefs = () => {
     const envFiles = getEnvPath();
     envFiles.forEach((env) => {
         const envPath = path_1.default.join(directoryPath, env);
@@ -64,7 +63,7 @@ const parseEnv = () => {
             envObject += ",\n\t";
         }
     });
-    fs_1.default.writeFileSync(envPathName, `// generate by ./lib/envTypes.ts
+    fs_1.default.writeFileSync(envPathName, `// generate by env-type-defs
 declare global {
   namespace NodeJS {
     interface ProcessEnv {
@@ -75,5 +74,5 @@ declare global {
 export {};
   `, {});
 };
-exports.generateEnvType = parseEnv;
-parseEnv();
+envTypeDefs();
+exports.default = envTypeDefs;

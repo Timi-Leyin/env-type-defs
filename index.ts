@@ -42,7 +42,7 @@ function determineType(value: any) {
   }
 }
 
-const parseEnv = () => {
+const envTypeDefs = () => {
   const envFiles = getEnvPath();
   envFiles.forEach((env) => {
     const envPath = path.join(directoryPath, env);
@@ -78,5 +78,5 @@ export {};
   );
 };
 
-parseEnv();
-export { parseEnv as generateEnvType };
+envTypeDefs();
+export default envTypeDefs;
