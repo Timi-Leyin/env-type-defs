@@ -2,10 +2,14 @@ import dotenv from "dotenv";
 import fs from "fs";
 import path from "path";
 
-const directoryPath = process.cwd()
+const directoryPath = process.cwd();
 const envTypePath = "env.d.ts";
+
+type envT = {
+  [key: string]: string;
+};
 const targetRegExp = new RegExp(/^\.env(\..+)?$/);
-const envs = {};
+const envs: envT = {};
 
 const getEnvPath = () => {
   try {
@@ -26,7 +30,7 @@ const getEnvPath = () => {
   }
 };
 
-function determineType(value) {
+function determineType(value: any) {
   if (value === "true" || value === "false") {
     return "boolean";
   } else if (!isNaN(value)) {
@@ -44,7 +48,7 @@ const parseEnv = () => {
     const envPath = path.join(directoryPath, env);
     const envConfig = dotenv.parse(fs.readFileSync(envPath));
     // insert config keys and values paris as (type);
-    Object.keys(envConfig).forEach((key) => {
+    Object.keys(envConfig).forEach((key: string) => {
       envs[key] = determineType(envConfig[key]);
     });
   });

@@ -2,13 +2,15 @@
   "name": "env-type-defs",
   "version": "1.0.0",
   "description": "Automatically generate TypeScript type definitions for environment variables based on the content of your env files.",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build":"tsc",
+    "publish": "npm run build && npm publish"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/timi-Leyin/env-types.git"
+    "url": "git+https://github.com/timi-Leyin/env-type-defs.git"
   },
   "keywords": [
     "TypeScript",
@@ -35,9 +37,9 @@
   "author": "Timileyin Oyelekan",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/timi-Leyin/env-types/issues"
+    "url": "https://github.com/timi-Leyin/env-type-defs/issues"
   },
-  "homepage": "https://github.com/timi-Leyin/env-types#readme",
+  "homepage": "https://github.com/timi-Leyin/env-type-defs#readme",
   "devDependencies": {
     "@types/node": "^20.14.2",
     "typescript": "^5.4.5"
