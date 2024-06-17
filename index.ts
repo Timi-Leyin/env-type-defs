@@ -2,7 +2,7 @@ import dotenv from "dotenv";
 import fs from "fs";
 import path from "path";
 
-const directoryPath = path.resolve(__dirname, "..");
+const directoryPath = process.cwd()
 const envTypePath = "env.d.ts";
 const targetRegExp = new RegExp(/^\.env(\..+)?$/);
 const envs = {};
