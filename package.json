@@ -1,0 +1,48 @@
+{
+  "name": "env-types",
+  "version": "1.0.0",
+  "description": "Automatically generate TypeScript type definitions for environment variables",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timi-Leyin/env-types.git"
+  },
+  "keywords": [
+    "TypeScript",
+    "Environment",
+    "Variables",
+    "Type",
+    "Safety",
+    "Node.js",
+    "Auto-generate",
+    "Types",
+    "CLI",
+    "Tool",
+    "Type",
+    "Definitions",
+    ".env",
+    "File",
+    "Code",
+    "Reliability",
+    "Type",
+    "Checking",
+    "Development",
+    "Tools"
+  ],
+  "author": "Timileyin Oyelekan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/timi-Leyin/env-types/issues"
+  },
+  "homepage": "https://github.com/timi-Leyin/env-types#readme",
+  "devDependencies": {
+    "@types/node": "^20.14.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}
