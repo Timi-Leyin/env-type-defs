@@ -1,7 +1,7 @@
 {
   "name": "env-types",
   "version": "1.0.0",
-  "description": "Automatically generate TypeScript type definitions for environment variables",
+  "description": "Automatically generate TypeScript type definitions for environment variables based on the content of your env files.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
