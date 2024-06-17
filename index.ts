@@ -64,7 +64,7 @@ const parseEnv = () => {
   });
   fs.writeFileSync(
     envPathName,
-    `// generate by ./lib/envTypes.ts
+    `// generate by env-type-defs
 declare global {
   namespace NodeJS {
     interface ProcessEnv {
