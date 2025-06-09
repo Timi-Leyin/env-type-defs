@@ -42,7 +42,16 @@
   "homepage": "https://github.com/timi-Leyin/env-type-defs#readme",
   "devDependencies": {
     "@types/node": "^20.14.2",
+    "next": "^15.3.3",
     "typescript": "^5.4.5"
+  },
+  "peerDependencies": {
+    "next": "15.3.3"
+  },
+  "peerDependenciesMeta": {
+    "next": {
+      "optional": true
+    }
   },
   "dependencies": {
     "dotenv": "^16.4.5"
