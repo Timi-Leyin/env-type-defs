@@ -1,17 +1,22 @@
 {
-  "name": "env-type-defs-repo",
+  "name": "env-type-defs",
   "version": "1.0.5",
   "description": "Automatically generate TypeScript type definitions for environment variables based on the content of your env files.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "private": true,
-  "workspaces": [
-    ".",
-    "packages/*",
-    "examples/*"
-  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./next": {
+      "import": "./dist/next.js",
+      "require": "./dist/next.js"
+    }
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
     "pub": "tsc && npm publish"
   },
   "repository": {
@@ -45,5 +50,21 @@
   "bugs": {
     "url": "https://github.com/timi-Leyin/env-type-defs/issues"
   },
-  "homepage": "https://github.com/timi-Leyin/env-type-defs#readme"
+  "homepage": "https://github.com/timi-Leyin/env-type-defs#readme",
+  "devDependencies": {
+    "@types/node": "^20.14.2",
+    "next": "^15.3.3",
+    "typescript": "^5.4.5"
+  },
+  "peerDependencies": {
+    "next": "15.3.3"
+  },
+  "peerDependenciesMeta": {
+    "next": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
 }
