@@ -1,6 +1,6 @@
 {
   "name": "env-type-defs-repo",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "Automatically generate TypeScript type definitions for environment variables based on the content of your env files.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -12,7 +12,9 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "pub": "tsc && npm publish"
+    "build": "yarn workspace env-type-defs build",
+    "prepub": " yarn build",
+    "pub": "yarn workspace env-type-defs pub --access public"
   },
   "repository": {
     "type": "git",
